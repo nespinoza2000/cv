@@ -1,0 +1,210 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Colores */
+:root {
+    --primary-color: #2c3e50;
+    /* Color principal para texto */
+    --secondary-color: #3498db;
+    /* Color secundario para enlaces y elementos destacados */
+    --background-color: #ecf0f1;
+
+    --section-background: #ffffff;
+    /* Color de fondo de secciones */
+    --highlight-color: #e74c3c;
+    /* Color de destaque para elementos importantes */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Fuente para el cuerpo del texto */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--secondary-color);
+    /* Color de fondo del encabezado */
+    padding: 10px 0;
+    color: #ffffff;
+    /* Color del texto en el encabezado */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre la imagen y el texto */
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Estilo para la imagen de perfil */
+header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* Hace que la imagen mantenga sus proporciones sin deformarse */
+    border: 3px solid #ffffff;
+    /* Borde blanco alrededor de la imagen */
+}
+
+main {
+    width: 100%;
+    margin-bottom: 20px;
+    /* Espacio debajo del main */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    max-width: 800px;
+    /* Limita el ancho de las secciones para que no se estiren demasiado */
+    margin: 20px auto;
+    /* Centra las secciones y añade espacio vertical */
+    text-align: left;
+    /* Alinea el texto a la izquierda dentro de las secciones */
+    background-color: var(--section-background);
+    /* Color de fondo de secciones */
+    padding: 20px;
+    border-radius: 8px;
+    /* Bordes redondeados para secciones */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para secciones */
+}
+
+/* Estilo para las listas */
+ul {
+    list-style-type: disc;
+    /* Estilo de lista con puntos */
+    padding-left: 20px;
+    /* Espacio a la izquierda para los puntos */
+}
+
+li {
+    margin-bottom: 10px;
+    /* Espacio debajo de cada ítem de lista */
+}
+
+/* Estilo para la experiencia laboral y educación */
+.experiencia,
+.educacion {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    /* Línea divisoria entre ítems */
+}
+
+.experiencia:last-child,
+.educacion:last-child {
+    border-bottom: none;
+    /* Quitar la línea divisoria del último ítem */
+}
+
+/* Estilo para enlaces */
+a {
+    color: var(--secondary-color);
+    /* Color de enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    /* Negrita para enlaces */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Subrayado al pasar el ratón */
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: var(--secondary-color);
+    /* Color de fondo del pie de página */
+    padding: 10px 0;
+    color: #ffffff;
+    /* Color del texto en el pie de página */
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    color: var(--highlight-color);
+    /* Color destacado para enlaces en el pie de página */
+    text-decoration: underline;
+    /* Subrayado para el enlace */
+}
+
+footer a:hover {
+    color: #ffffff;
+    /* Cambia el color al pasar el ratón */
+    text-decoration: none;
+    /* Quitar subrayado al pasar el ratón */
+}
+
+/* Flexbox aplicado a las secciones de experiencia laboral y educación */
+.experiencia,
+.educacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experiencia>div,
+.educacion>div {
+    flex: 1;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        /* Menor relleno en pantallas pequeñas */
+    }
+
+    section {
+        margin: 10px 0;
+        /* Menor margen vertical en pantallas pequeñas */
+    }
+
+    .experiencia,
+    .educacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experiencia>div,
+    .educacion>div {
+        width: 100%;
+        /* Asegura que cada ítem ocupe todo el ancho disponible */
+        margin-bottom: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        /* Acomoda la imagen y el texto en columna en pantallas pequeñas */
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+        /* Reduce el tamaño de la imagen de perfil en pantallas pequeñas */
+    }
+}
